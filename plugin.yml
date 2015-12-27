@@ -1,0 +1,12 @@
+name: MultiKillW
+main: me.crafter.mc.multikillw.MultiKillW
+author: connection_lost
+softdepend: [Vault]
+version: 3.0
+description: >
+             0w0
+commands:
+   multikillw:
+      permission: multikillw.admin
+      usage: |
+         /multikillw

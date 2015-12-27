@@ -1,0 +1,13 @@
+# Configuration for MultiKillW
+
+deathmessages: true
+combomessages: true
+useitemname: true
+# %pre% prefix
+# %suf% suffix
+# %name% player name
+# %disp% player display name
+# requires vault
+playernameformat: '%name%'
+# debug
+debug: false
