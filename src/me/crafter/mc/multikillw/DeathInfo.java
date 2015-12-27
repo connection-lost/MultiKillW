@@ -45,9 +45,10 @@ public class DeathInfo {
 			if (killer instanceof Player){
 				killername = ((Player)killer).getName();
 				reason = "PVP";
-			} else if (killer.getCustomName() != null){
-				killername = killer.getCustomName();
 			}
+//			else if (killer.getCustomName() != null){
+//				killername = killer.getCustomName();
+//			}
 			if (killer instanceof Projectile){
 				ProjectileSource shooter = ((Projectile)killer).getShooter();
 				if (shooter instanceof Entity){
@@ -56,9 +57,10 @@ public class DeathInfo {
 					if (shooter instanceof Player){
 						killername = ((Player)shooter).getName();
 						reason = "PVPARROW";
-					} else if (((Entity)shooter).getCustomName() != null){
-						killername = ((Entity)shooter).getCustomName();
 					}
+//					else if (((Entity)shooter).getCustomName() != null){
+//						killername = ((Entity)shooter).getCustomName();
+//					}
 				} else if (shooter instanceof BlockProjectileSource){
 					killertypename = "DISPENSER";
 					reason = "DISPENSER";

@@ -14,7 +14,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
-import net.md_5.bungee.api.ChatColor;
+import org.bukkit.ChatColor;
 import net.milkbowl.vault.chat.Chat;
 
 public class Storage {
