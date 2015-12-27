@@ -6,14 +6,13 @@ import java.util.Map;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
 import org.bukkit.entity.Tameable;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
-import org.bukkit.projectiles.BlockProjectileSource;
-import org.bukkit.projectiles.ProjectileSource;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
 public class DeathInfo {
@@ -50,18 +49,18 @@ public class DeathInfo {
 //				killername = killer.getCustomName();
 //			}
 			if (killer instanceof Projectile){
-				ProjectileSource shooter = ((Projectile)killer).getShooter();
-				if (shooter instanceof Entity){
+				LivingEntity shooter = ((Projectile)killer).getShooter();
+				if (shooter instanceof LivingEntity){
 					killertypename = ((Entity)shooter).getType().name();
 					reason = killertypename;
 					if (shooter instanceof Player){
 						killername = ((Player)shooter).getName();
 						reason = "PVPARROW";
 					}
-//					else if (((Entity)shooter).getCustomName() != null){
-//						killername = ((Entity)shooter).getCustomName();
-//					}
-				} else if (shooter instanceof BlockProjectileSource){
+					else if (((LivingEntity)shooter).getCustomName() != null){
+						killername = ((LivingEntity)shooter).getCustomName();
+					}
+				} else if (shooter == null){
 					killertypename = "DISPENSER";
 					reason = "DISPENSER";
 				}
